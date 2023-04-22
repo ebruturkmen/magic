@@ -1,0 +1,493 @@
+/* General */
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(20, 20, 20);
+    overflow-x: hidden;
+}
+
+:root {
+    --orange: rgb(255, 138, 35);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+    .container {
+        width: 540px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        width: 1320px;
+    }
+}
+
+/* Header */
+header {
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+    color: white;
+}
+
+.headerSticky {
+    background-color: rgb(20, 20, 20);
+    border-bottom: 1px solid rgb(46, 46, 46);
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+header .brand a {
+    font-size: 1.2rem;
+    color: white;
+}
+
+header ul {
+    display: flex;
+    gap: 4rem;
+}
+
+header ul a {
+    color: rgb(196, 196, 196);
+}
+
+#home {
+    background-color: rgb(20, 20, 20);
+    height: 100vh;
+    margin-bottom: 2rem;
+}
+
+#home .container {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    background-color: rgb(20, 20, 20);
+    height: 100vh;
+}
+
+.main-left {
+    padding: 0 1rem;
+    flex: 25%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.6rem;
+    color: rgb(150, 150, 150);
+    font-size: 0.7rem;
+    line-height: 1.4rem;
+}
+
+.main-left .artist-name {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    letter-spacing: 0.2rem;
+}
+
+.main-left h4 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: white;
+    font-weight: lighter;
+    margin-bottom: 1rem;  
+}
+
+.main-middle {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-middle img {
+    height: 16rem;
+    width: 16rem;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+
+.main-middle::after {
+    content: '';
+    position: absolute;
+    height: 24rem;
+    width: 24rem;
+    border-radius: 50%;
+    z-index: 2;
+    border: 1px solid white;
+    outline: 1px solid rgba(255, 255, 255, 0.227);
+    outline-offset: 1rem;
+}
+
+.main-middle::before {
+    content: 'ART';
+    position: absolute;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.02);
+    font-size: 34rem;
+    animation-name: artText;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+
+@keyframes artText {
+    0%, 100% {
+        transform: translateY(10px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.main-right {
+    flex: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home::after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width:50%;
+    background-color: rgba(255, 255, 255, 0.01);
+    top: 0;
+    left: 0;
+}
+
+.circle-buttons {
+    position: absolute;
+    bottom: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+}
+.circle {
+    height: 0.6rem;
+    width: 0.6rem;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.circle.active, .circle:hover {
+    outline: 1px solid white;
+    outline-offset: 0.2rem;
+}
+
+#quotations {
+    height: 50vh;
+    margin-bottom: 2rem;
+    background-color: rgb(20, 20, 20);
+}
+
+#quotations .container {
+    height: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+#quotations p {
+    width: 60%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+#quotations h4 {
+    font-weight: lighter;
+    color: rgb(255, 231, 246);
+}
+
+#quotations img {
+    height: 6rem;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .swiper-slide h3 {
+    position: absolute;
+    margin: 1rem;
+    font-weight: lighter;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(30, 30, 30, 0.5);
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    color: white;
+  }
+
+.artists-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.artist-element {
+    background-color: rgb(30, 30, 30);
+    width: 40vw;
+    flex-direction: column;
+    height: 200px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(234, 234, 234);
+    display: flex;
+    text-align: center;
+    padding: 100px;
+    font-size: 0.9rem;
+    gap: 1rem;
+    border-left: 2px solid white;
+}
+
+.artist-element img {
+    width: 60px;
+}
+
+/* Blog */
+.blog-section {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-section h2 {
+    font-size: 2rem;
+    font-weight: normal;
+    color: rgb(255, 255, 255);
+    margin-bottom: 2rem;
+}
+
+.blog-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3%;
+}
+
+.blog-box {
+    flex: calc(91% / 4);
+    margin-bottom: 2.8rem;
+}
+
+.blog-img {
+    width: 100%;
+    height: 180px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.blog-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.blog-img:hover img {
+    transform: scale(1.2);
+    transition: 0.6s;
+}
+
+.blog-content {
+    display: flex;
+    gap: 0.6rem;
+    flex-direction: column;
+}
+
+.blog-box .blog-title {
+    color: rgb(198, 198, 198);
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+.blog-box .blog-date {
+    font-size: 0.6rem;
+    color: rgb(255, 255, 255);
+}
+
+.blog-box .blog-text {
+    font-weight: lighter;
+    font-size: 0.75rem;
+    line-height: 1.2rem;
+    color: rgb(158, 158, 158);
+}
+
+.blog-section a {
+    color: rgb(210, 210, 210);
+    align-self: flex-end;
+    font-size: 1.2rem;
+}
+
+footer {
+    padding: 2rem 0;
+    background-color: rgb(26, 26, 26);
+    margin-top: 4rem;
+    color: rgb(220, 220, 220);
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .social-icons a {
+    margin-right: 1rem;
+}
+
+footer .social-icons img {
+    width: 1.4rem;
+}
+
+footer .social-icons a:last-child {
+    margin-right: 0;
+}
+
+footer .links {
+    display: flex;
+    gap: 1rem;
+}
+
+footer .links a {
+    color: rgb(186, 186, 186);
+    font-size: 0.8rem;
+}
+
+footer .footer-end {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.7rem;
+    margin-right: 2.8rem;
+}
+
+@media (max-width: 992px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+    .brand {
+        border-bottom: 1px solid rgb(16, 16, 16);
+        width: 100vw;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    .header-buttons {
+        display: none;
+    }
+    #home .container {
+        margin-top: 6rem;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .main-left {
+        margin-bottom: 2rem;
+    }
+
+    .main-left #artistName {
+        font-size: 1.2rem;
+    }
+
+    .main-left h4 {
+        font-size: 0.8rem;
+        margin-bottom: 0rem;
+    }
+
+    #quotations p, #quotations h4 {
+        font-size: 0.8rem;
+    }
+
+    .artists-section .artist-element {
+        font-size: 0.6rem;
+        padding: 2rem;
+    }
+
+    .blog-section .blog-area .blog-box {
+        flex-basis: 40%;
+    }
+
+    .blog-section, footer .container {
+        padding: 1rem;
+    }
+}
